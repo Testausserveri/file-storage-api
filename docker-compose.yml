@@ -1,6 +1,6 @@
 services:
   file-storage-api:
-    image: file-storage-api
+    image: ghcr.io/testausserveri/file-storage-api
     build: .
     volumes:
       - ./.apikeys:/app/.apikeys

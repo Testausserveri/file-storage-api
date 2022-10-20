@@ -1,11 +1,36 @@
 # File Storage API
 
-Simple API for reading, listing, uploading and deleting files from a server.
+Simple HTTP API for reading, listing, uploading and deleting files from a server.
 
 - [File Storage API](#file-storage-api)
+  - [Getting Started](#getting-started)
+    - [Docker Compose](#docker-compose)
   - [API Documentation](#api-documentation)
     - [Authorization](#authorization)
     - [Errors](#errors)
+
+## Getting Started
+
+### Docker Compose
+
+First, create a file `.apikeys` with whitelisted random-generated API keys on each line.
+
+Create a `docker-compose.yml`:
+```yaml
+services:
+  file-storage-api:
+    image: ghcr.io/testausserveri/file-storage-api
+    volumes:
+      - ./.apikeys:/app/.apikeys
+      - ./media:/app/uploads
+    ports:
+      - 8080:8080
+```
+
+Run:
+```
+$ docker compose up
+```
 
 ## API Documentation
 
