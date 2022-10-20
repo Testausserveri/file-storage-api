@@ -1,0 +1,9 @@
+services:
+  file-storage-api:
+    image: file-storage-api
+    build: .
+    volumes:
+      - ./.apikeys:/app/.apikeys
+      - ./media:/app/uploads
+    ports:
+      - 8080:8080
